@@ -1,0 +1,88 @@
+[2019-07-07 04:23:55,216: INFO/MainProcess] Connected to redis://redis:6379/0
+[2019-07-07 04:23:55,236: INFO/MainProcess] mingle: searching for neighbors
+[2019-07-07 04:23:56,273: INFO/MainProcess] mingle: all alone
+[2019-07-07 04:23:56,291: INFO/MainProcess] celery@9bac4935ec29 ready.
+[2019-07-07 04:24:01,295: INFO/MainProcess] Events of group {task} enabled by remote.
+[2019-07-07 04:27:15,833: INFO/MainProcess] Received task: tasks.run[4cc58ba8-1b07-47fc-8177-851ba6ae6bfa]  
+[2019-07-07 04:27:25,845: WARNING/ForkPoolWorker-1] 処理　おわた
+[2019-07-07 04:27:25,849: INFO/ForkPoolWorker-1] Task tasks.run[4cc58ba8-1b07-47fc-8177-851ba6ae6bfa] succeeded in 10.01228231999994s: 'おわったよ'
+[2019-07-07 04:27:25,856: INFO/MainProcess] Received task: tasks.calc[4d0a9477-6550-4b49-af96-60223fb9fb07]  
+[2019-07-07 04:27:25,863: INFO/ForkPoolWorker-1] Task tasks.calc[4d0a9477-6550-4b49-af96-60223fb9fb07] succeeded in 0.0010693789990909863s: 300
+[2019-07-07 04:28:19,774: INFO/MainProcess] Received task: tasks.run[01a77564-ca5a-4153-8457-1ce8b251a96f]  
+[2019-07-07 04:28:29,779: WARNING/ForkPoolWorker-1] 処理　おわた
+[2019-07-07 04:28:29,780: INFO/ForkPoolWorker-1] Task tasks.run[01a77564-ca5a-4153-8457-1ce8b251a96f] succeeded in 10.00382556600016s: 'おわったよ'
+[2019-07-07 04:28:29,785: INFO/MainProcess] Received task: tasks.calc[45777d5c-44d1-4106-99eb-f900866085b9]  
+[2019-07-07 04:28:29,789: INFO/ForkPoolWorker-1] Task tasks.calc[45777d5c-44d1-4106-99eb-f900866085b9] succeeded in 0.0009378329996252432s: 300
+[2019-07-07 04:28:36,743: INFO/MainProcess] Received task: tasks.run[b8ffc920-092b-449f-9c5e-a1e98d366849]  
+[2019-07-07 04:28:46,753: WARNING/ForkPoolWorker-1] 処理　おわた
+[2019-07-07 04:28:46,754: INFO/ForkPoolWorker-1] Task tasks.run[b8ffc920-092b-449f-9c5e-a1e98d366849] succeeded in 10.009869452002022s: 'おわったよ'
+[2019-07-07 04:28:46,764: INFO/MainProcess] Received task: tasks.calc[d5dee6fb-d2c3-4989-84f7-bf9837dfe404]  
+[2019-07-07 04:28:46,767: INFO/ForkPoolWorker-1] Task tasks.calc[d5dee6fb-d2c3-4989-84f7-bf9837dfe404] succeeded in 0.0008157999982358888s: 300
+[2019-07-07 04:28:49,353: INFO/MainProcess] Received task: tasks.run[28074150-1608-405d-889e-07eb17e1d1bd]  
+[2019-07-07 04:28:59,365: WARNING/ForkPoolWorker-1] 処理　おわた
+[2019-07-07 04:28:59,366: INFO/ForkPoolWorker-1] Task tasks.run[28074150-1608-405d-889e-07eb17e1d1bd] succeeded in 10.011335408999003s: 'おわったよ'
+[2019-07-07 04:28:59,373: INFO/MainProcess] Received task: tasks.calc[43c7ccc7-00f3-410f-bd41-b3bab5a081fc]  
+[2019-07-07 04:28:59,377: INFO/ForkPoolWorker-1] Task tasks.calc[43c7ccc7-00f3-410f-bd41-b3bab5a081fc] succeeded in 0.0008692170013091527s: 300
+[2019-07-07 04:43:10,819: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/redis/connection.py", line 185, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 317, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python3.6/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 593, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/loops.py", line 91, in asynloop
+    next(loop)
+  File "/usr/local/lib/python3.6/site-packages/kombu/asynchronous/hub.py", line 362, in create_loop
+    cb(*cbargs)
+  File "/usr/local/lib/python3.6/site-packages/kombu/transport/redis.py", line 1052, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/usr/local/lib/python3.6/site-packages/kombu/transport/redis.py", line 348, in on_readable
+    chan.handlers[type]()
+  File "/usr/local/lib/python3.6/site-packages/kombu/transport/redis.py", line 679, in _receive
+    ret.append(self._receive_one(c))
+  File "/usr/local/lib/python3.6/site-packages/kombu/transport/redis.py", line 690, in _receive_one
+    response = c.parse_response()
+  File "/usr/local/lib/python3.6/site-packages/redis/client.py", line 3036, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/usr/local/lib/python3.6/site-packages/redis/client.py", line 3013, in _execute
+    return command(*args)
+  File "/usr/local/lib/python3.6/site-packages/redis/connection.py", line 637, in read_response
+    response = self._parser.read_response()
+  File "/usr/local/lib/python3.6/site-packages/redis/connection.py", line 290, in read_response
+    response = self._buffer.readline()
+  File "/usr/local/lib/python3.6/site-packages/redis/connection.py", line 224, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.6/site-packages/redis/connection.py", line 199, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+[2019-07-07 04:43:10,852: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 2.00 seconds...
+
+[2019-07-14 00:13:45,372: INFO/MainProcess] Connected to redis://redis:6379/0
+[2019-07-14 00:13:45,384: INFO/MainProcess] mingle: searching for neighbors
+[2019-07-14 00:13:46,410: INFO/MainProcess] mingle: all alone
+[2019-07-14 00:13:46,424: INFO/MainProcess] celery@9bac4935ec29 ready.
+[2019-07-14 00:13:50,120: INFO/MainProcess] Events of group {task} enabled by remote.
+[2019-07-14 00:17:25,688: INFO/MainProcess] Received task: tasks.run[be75543d-3b9b-446c-b3e5-7a3ee1524c07]  
+[2019-07-14 00:17:35,701: WARNING/ForkPoolWorker-1] Process has finished!
+[2019-07-14 00:17:35,704: INFO/ForkPoolWorker-1] Task tasks.run[be75543d-3b9b-446c-b3e5-7a3ee1524c07] succeeded in 10.011369355999932s: 'Process has just finished!'
+[2019-07-14 00:17:35,712: INFO/MainProcess] Received task: tasks.calc[dfefa7b9-19c1-45a6-b612-d38a2500448f]  
+[2019-07-14 00:17:35,719: INFO/ForkPoolWorker-1] Task tasks.calc[dfefa7b9-19c1-45a6-b612-d38a2500448f] succeeded in 0.003247108999971715s: 300
+[2019-07-14 00:18:16,200: INFO/MainProcess] Received task: tasks.run[fc92f548-7884-4365-b766-5d7f25924316]  
+[2019-07-14 00:18:26,213: WARNING/ForkPoolWorker-1] Process has finished!
+[2019-07-14 00:18:26,214: INFO/ForkPoolWorker-1] Task tasks.run[fc92f548-7884-4365-b766-5d7f25924316] succeeded in 10.011308095000004s: 'Process has just finished!'
+[2019-07-14 00:18:26,226: INFO/MainProcess] Received task: tasks.calc[5c5dfa52-8d40-4e35-950a-047daa27e11f]  
+[2019-07-14 00:18:26,230: INFO/ForkPoolWorker-1] Task tasks.calc[5c5dfa52-8d40-4e35-950a-047daa27e11f] succeeded in 0.0008774230000199168s: 300
+[2019-07-14 00:19:07,405: INFO/MainProcess] Received task: tasks.run[c51df59d-6f21-4e04-9714-b09f43febb19]  
+[2019-07-14 00:19:17,417: WARNING/ForkPoolWorker-1] Process has finished!
+[2019-07-14 00:19:17,418: INFO/ForkPoolWorker-1] Task tasks.run[c51df59d-6f21-4e04-9714-b09f43febb19] succeeded in 10.011203935000026s: 'Process has just finished!'
+[2019-07-14 00:19:17,424: INFO/MainProcess] Received task: tasks.calc[d384d52e-8fc6-40f2-a515-8aa185679e01]  
+[2019-07-14 00:19:17,429: INFO/ForkPoolWorker-1] Task tasks.calc[d384d52e-8fc6-40f2-a515-8aa185679e01] succeeded in 0.0009852549999322946s: 300
